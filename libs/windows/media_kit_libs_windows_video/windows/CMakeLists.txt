@@ -69,16 +69,16 @@ string(TOLOWER "${CMAKE_GENERATOR_PLATFORM}" LIBMPV_GENERATOR_PLATFORM)
 
 if(LIBMPV_TARGET_PROCESSOR MATCHES "^(arm64|aarch64)$" OR LIBMPV_GENERATOR_PLATFORM MATCHES "^(arm64|aarch64)$")
   set(LIBMPV "mpv-dev-aarch64-20260926-git-0b7ed67.zip")
-  set(LIBMPV_SHA256 "1fc5cdbd662b4a96be3137be88e8df6a817c79708e1de505d711afdb101cc555")
+  set(LIBMPV_SHA256 "3a6d55b9c466df3e80c8985bbadc90d8bcb5a96283e0802b32ef2818d0936476")
 else()
   set(LIBMPV "mpv-dev-x86_64-20260926-git-0b7ed67.7z")
-  set(LIBMPV_SHA256 "a4aed24edfee022d2f08c0ac4cb8a4cc2698306acbb925cfaed4befc38e90410")
+  set(LIBMPV_SHA256 "df04f07c109515de074dd8e91c38f337f21496a5435fb74244655989d6d7f627")
 endif()
 
 # Download URL of the libmpv archive.
 # Fork build (gaoxing64/libmpv-win32-video-cmake feat/audio-filters) with ffmpeg
 # dynaudnorm/loudnorm filters enabled for volume normalization.
-set(LIBMPV_URL "https://github.com/gaoxing64/libmpv-win32-video-cmake/releases/download/202609261942/${LIBMPV}")
+set(LIBMPV_URL "https://github.com/gaoxing64/libmpv-win32-video-cmake/releases/download/202609262331/${LIBMPV}")
 
 # Download location of the libmpv archive.
 set(LIBMPV_ARCHIVE "${CMAKE_BINARY_DIR}/${LIBMPV}")
