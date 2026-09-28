@@ -57,15 +57,16 @@ task downloadDependencies(type: Exec) {
         outputDir.mkdirs()
 
         // Download all *.jar dependencies & verify their SHA-256 checksums.
-        // Fork builds (gaoxing64/libmpv-android-video-build feat/audio-filters) with
-        // ffmpeg dynaudnorm/loudnorm filters enabled for volume normalization.
+        // Fork builds (gaoxing64/libmpv-android-video-build) with
+        // ffmpeg dynaudnorm/loudnorm filters enabled for volume normalization
+        // and Lua 5.2 enabled for mpv's built-in scripts.
         // 2026-09-27: 之前的构建缺 libmediakitandroidhelper.so（CI 里 gradle 因 NDK 许可失败且被忽略），
         // Android 端拿不到 JavaVM 而黑屏；这批 jar 已包含 helper。
         def filesToDownload = [
-            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-arm64-v8a.jar", "sha256": "0ad761b519b3f83ff93ba104d28884cb526c35e8ea356cd03eb9a6b79dce347e", "destination": file("$buildDir/vnext/default-arm64-v8a.jar")],
-            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-armeabi-v7a.jar", "sha256": "3ebee723a30101ab920ccab82598f6a039c7598e9f6ebd48e189385bc09fb408", "destination": file("$buildDir/vnext/default-armeabi-v7a.jar")],
-            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86_64.jar", "sha256": "35bd554a6b97eec4d2d398c4a761b167f70c5c330bd3fcdd7214d31182935299", "destination": file("$buildDir/vnext/default-x86_64.jar")],
-            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86.jar", "sha256": "df692981397a7f4f0bef84a1c99679c603109f64731d41fab46468604cddf6d8", "destination": file("$buildDir/vnext/default-x86.jar")]
+            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-arm64-v8a.jar", "sha256": "aa5026e80f9f7ab65c7e15a657938aa3e6b6d966d897e975cfe5e07ea320664f", "destination": file("$buildDir/vnext/default-arm64-v8a.jar")],
+            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-armeabi-v7a.jar", "sha256": "92d8a9e294c8def504f754464cd78cc0548cf206747fb28ed87caa694cccc789", "destination": file("$buildDir/vnext/default-armeabi-v7a.jar")],
+            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86_64.jar", "sha256": "b97b1531be7c38a1f4473032dbcb685ab140462ae2c7ea66ce006406d4c4eb58", "destination": file("$buildDir/vnext/default-x86_64.jar")],
+            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86.jar", "sha256": "cf3a58cfaf62e9f82dccedad38437caf2d14b02cb9c38aaaf80270511bae312f", "destination": file("$buildDir/vnext/default-x86.jar")]
         ]
 
         filesToDownload.each { fileInfo ->

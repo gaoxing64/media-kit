@@ -68,17 +68,18 @@ string(TOLOWER "${CMAKE_SYSTEM_PROCESSOR}" LIBMPV_TARGET_PROCESSOR)
 string(TOLOWER "${CMAKE_GENERATOR_PLATFORM}" LIBMPV_GENERATOR_PLATFORM)
 
 if(LIBMPV_TARGET_PROCESSOR MATCHES "^(arm64|aarch64)$" OR LIBMPV_GENERATOR_PLATFORM MATCHES "^(arm64|aarch64)$")
-  set(LIBMPV "mpv-dev-aarch64-20260926-git-0b7ed67.zip")
-  set(LIBMPV_SHA256 "3a6d55b9c466df3e80c8985bbadc90d8bcb5a96283e0802b32ef2818d0936476")
+  set(LIBMPV "mpv-dev-aarch64-20260928-git-0b7ed67.zip")
+  set(LIBMPV_SHA256 "458d039c298c87f75d383007ff0cd1559faf7b081d2aa8a2b6b4a9de752a9483")
 else()
-  set(LIBMPV "mpv-dev-x86_64-20260926-git-0b7ed67.7z")
-  set(LIBMPV_SHA256 "df04f07c109515de074dd8e91c38f337f21496a5435fb74244655989d6d7f627")
+  set(LIBMPV "mpv-dev-x86_64-20260928-git-0b7ed67.7z")
+  set(LIBMPV_SHA256 "7e4d591a9cd5d5c7413a40ced5479ada8bcf8b63931018d6db623444f000646c")
 endif()
 
 # Download URL of the libmpv archive.
-# Fork build (gaoxing64/libmpv-win32-video-cmake feat/audio-filters) with ffmpeg
-# dynaudnorm/loudnorm filters enabled for volume normalization.
-set(LIBMPV_URL "https://github.com/gaoxing64/libmpv-win32-video-cmake/releases/download/202609262331/${LIBMPV}")
+# Fork build (gaoxing64/libmpv-win32-video-cmake) with ffmpeg
+# dynaudnorm/loudnorm filters enabled for volume normalization and
+# LuaJIT enabled for mpv's built-in scripts.
+set(LIBMPV_URL "https://github.com/gaoxing64/libmpv-win32-video-cmake/releases/download/202609280222/${LIBMPV}")
 
 # Download location of the libmpv archive.
 set(LIBMPV_ARCHIVE "${CMAKE_BINARY_DIR}/${LIBMPV}")
