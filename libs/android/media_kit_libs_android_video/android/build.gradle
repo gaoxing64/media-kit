@@ -65,7 +65,7 @@ task downloadDependencies(type: Exec) {
         def filesToDownload = [
             ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-arm64-v8a.jar", "sha256": "aa5026e80f9f7ab65c7e15a657938aa3e6b6d966d897e975cfe5e07ea320664f", "destination": file("$buildDir/vnext/default-arm64-v8a.jar")],
             ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-armeabi-v7a.jar", "sha256": "92d8a9e294c8def504f754464cd78cc0548cf206747fb28ed87caa694cccc789", "destination": file("$buildDir/vnext/default-armeabi-v7a.jar")],
-            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86_64.jar", "sha256": "b97b1531be7c38a1f4473032dbcb685ab140462ae2c7ea66ce006406d4c4eb58", "destination": file("$buildDir/vnext/default-x86_64.jar")],
+            ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86_64.jar", "sha256": "b97b1531be7c38a1f4473032dfcb685ab140462ae2c7ea66ce006406d4c4eb58", "destination": file("$buildDir/vnext/default-x86_64.jar")],
             ["url": "https://github.com/gaoxing64/libmpv-android-video-build/releases/download/vnext/default-x86.jar", "sha256": "cf3a58cfaf62e9f82dccedad38437caf2d14b02cb9c38aaaf80270511bae312f", "destination": file("$buildDir/vnext/default-x86.jar")]
         ]
 
